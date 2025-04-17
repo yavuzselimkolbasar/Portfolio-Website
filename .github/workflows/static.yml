@@ -33,12 +33,27 @@ jobs:
 
           echo "yavuzselimkolbasar.com" > _site/CNAME
 
-          cp -r . _site/
+          find . -type f -not -path "*/\.*" -not -path "*/node_modules/*" -not -path "*/_site/*" -exec cp --parents {} _site/ \;
           
-          rm -rf _site/_site
-          rm -rf _site/.git
-          rm -rf _site/.github
-          rm -rf _site/node_modules
+          # Copy directories separately
+          if [ -d "./css" ]; then
+            cp -r ./css _site/
+          fi
+          if [ -d "./js" ]; then
+            cp -r ./js _site/
+          fi
+          if [ -d "./images" ]; then
+            cp -r ./images _site/
+          fi
+          if [ -d "./assets" ]; then
+            cp -r ./assets _site/
+          fi
+          if [ -d "./docs" ]; then
+            cp -r ./docs _site/
+          fi
+          if [ -d "./projects" ]; then
+            cp -r ./projects _site/
+          fi
 
           echo "Files copied to _site:"
           find _site -type f -not -path "*/\.*" | sort
