@@ -1,0 +1,57 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --nav-bg: rgba(18, 18, 18, 0.9);
+    --section-bg: #1e1e1e;
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --secondary-color: #aaaaaa;
+    --folder-hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    --folder-hover-transform: translateY(-8px);
+    --folder-transition: all 0.08s cubic-bezier(0.34, 1.8, 0.64, 1);
+    --content-hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    --content-hover-transform: translateY(-4px);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --folder-hover: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --section-bg: #f4f4f4;
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    --folder-hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --content-hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --folder-hover: rgba(0, 0, 0, 0.05);
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scroll-padding-bottom: 60px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}

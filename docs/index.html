@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <title>Yavuz Selim - Documentation</title>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/112783581?s=400&u=16c74a87b1dc6ac672cc1f022b4e32261aa22403&v=4">
+    <link rel="stylesheet" href="../css/utils/variables.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/copyright.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/pages/docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css">
+    <script src="../js/components/theme.js"></script>
+    <script src="../js/components/navbar.js"></script>
+    <script src="../js/pages/docs.js" type="module"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-wrapper">
+            <ul class="nav-links">
+                <li>
+                    <a href="../home/index.html">
+                        <svg class="nav-icon home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../projects/index.html">
+                        <svg class="nav-icon projects-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="active">
+                        <svg class="nav-icon docs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span class="nav-text">Documentation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/yavuzselimkolbasar" target="_blank">
+                        <svg class="nav-icon github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        <span class="nav-text">GitHub</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="theme-toggle-btn">
+                <span class="theme-toggle-icon">
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="documentation">
+            <h1>Documentation</h1>
+            
+            <div class="docs-container">
+                <div class="docs-sidebar">
+                    <div class="search-box">
+                        <input type="text" id="searchDocs" placeholder="Search documentation...">
+                    </div>
+                    <div class="folder-structure">
+                        <div class="folder">
+                            <div class="folder-header">
+                                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span class="folder-name">WRO-2025 Senior</span>
+                                <span class="folder-toggle"></span>
+                            </div>
+                            <div class="folder-content">
+                                <a href="#project1" class="doc-link">N/A</a>
+                                <a href="#project2" class="doc-link">N/A</a>
+                                <a href="#project3" class="doc-link">N/A</a>
+                            </div>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-header">
+                                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span class="folder-name">ZDI-2025</span>
+                                <span class="folder-toggle"></span>
+                            </div>
+                            <div class="folder-content">
+                                <a href="#app1" class="doc-link">N/A</a>
+                                <a href="#app2" class="doc-link">N/A</a>
+                            </div>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-header">
+                                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span class="folder-name">Pybricks LEGO Projects</span>
+                                <span class="folder-toggle"></span>
+                            </div>
+                            <div class="folder-content">
+                                <a href="content/pybricks/boxing/index.html#boxing" class="doc-link">boxing.py</a>
+                                <a href="content/pybricks/driving-base/index.html#drivingbase" class="doc-link">DrivingBaseXboxController.py</a>
+                                <a href="content/pybricks/remote-car/index.html#remotecar" class="doc-link">Remote-Car.py</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-content">
+                    <div id="project1" class="doc-section">
+                        <h2>N/A</h2>
+                    </div>
+                    <div id="boxing" class="doc-section">
+                        <div class="file-path">
+                            <span class="folder">Pybricks LEGO Projects</span>
+                            <span class="separator">/</span>
+                            <span class="file">boxing.py</span>
+                        </div>
+
+                        <h2>How to Control Your LEGO® SPIKE™ Prime Boxing Robot with an Xbox Controller</h2>
+                        
+                        <p>This guide explains how to create a <strong>LEGO® SPIKE™ Prime Boxing Robot</strong> using <strong>Pybricks</strong> and an Xbox controller. It includes both a detailed code explanation and instructions on how to get everything set up, from installing Pybricks to running the program. Whether you're building a boxing robot or a remote-controlled car, this guide will help you get your robot moving!</p>
+
+                        <hr>
+
+                        <h3>1. Install Pybricks on Your LEGO® SPIKE™ Prime Boxing Robot Hub</h3>
+                        
+                        <p>Before you can run the code, you need to install <strong>Pybricks</strong> firmware on your <strong>LEGO® SPIKE™ Prime</strong> hub. Pybricks is a Python library that allows you to program your robot with Python. Here's how to do it:</p>
+
+                        <ol>
+                            <li>
+                                <strong>Go to the Pybricks Getting Started Page</strong>:
+                                <ul>
+                                    <li>Visit the <a href="https://pybricks.com/learn/getting-started/install-pybricks/">Pybricks installation guide</a>.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Download and Install Pybricks</strong>:
+                                <ul>
+                                    <li>Follow the steps on the website to install the Pybricks firmware on your hub. You'll need to connect the hub to your computer using a USB cable.</li>
+                                    <li>Pybricks works with LEGO SPIKE Prime and other compatible hubs.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Install Pybricks Code Editor</strong>:
+                                <ul>
+                                    <li>Install the Pybricks Code Editor to write and upload your Python scripts. This is where you will input and run your code.</li>
+                                    <li>Follow the installation steps on the official page linked above.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pair Your Xbox Controller</strong>:
+                                <ul>
+                                    <li>Once Pybricks is installed, you can pair your Xbox controller after setting up the code with the <strong>LEGO® SPIKE™ Prime</strong> hub via Bluetooth. Make sure your controller is turned on and within range.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <hr>
+
+                        <h3>2. Understanding the Code</h3>
+                        
+                        <p>Now let's break down the Python code used to control the robot. This code uses Pybricks to control both the <strong>tank drive</strong> and the <strong>arms</strong> of your <strong>LEGO® SPIKE™ Prime Boxing Robot</strong> with an Xbox controller.</p>
+
+                        <h4>Imports and Setup</h4>
+                        <pre><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port</code></pre>
+
+                        <ul>
+                            <li><strong><code>PrimeHub</code></strong>: Initializes the <strong>LEGO® SPIKE™ Prime</strong> hub.</li>
+                            <li><strong><code>Motor</code></strong>: Controls the motors that make the robot move and punch.</li>
+                            <li><strong><code>wait</code></strong>: Pauses the program for a short time (measured in milliseconds).</li>
+                            <li><strong><code>XboxController</code></strong>: Connects and controls the Xbox controller.</li>
+                            <li><strong><code>Button</code>, <code>Direction</code>, <code>Port</code></strong>: Defines the buttons on the controller, motor directions, and motor ports on the hub.</li>
+                        </ul>
+
+                        <h4>Creating the TankDrive Class</h4>
+                        <pre class="line-numbers"><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port
+
+class TankDrive:
+    def __init__(self, left_motor, right_motor):
+        self.left_motor = left_motor  # Left motor
+        self.right_motor = right_motor  # Right motor
+
+    def drive(self, left_power, right_power):
+        if left_power != 0 or right_power != 0:
+            self.left_motor.dc(left_power)
+            self.right_motor.dc(right_power)
+        else:
+            self.left_motor.dc(0)
+            self.right_motor.dc(0)</code></pre>
+
+                        <ul>
+                            <li><strong>Tank Drive</strong> means the robot moves by controlling the left and right wheels independently (like a tank).</li>
+                            <li>The <code>drive()</code> function moves the robot. It checks if there's power (speed) set for the motors and sends that power to the motors.</li>
+                        </ul>
+
+                        <h4>Creating the Arm Class</h4>
+                        <pre><code class="language-python">class Arm:
+    def __init__(self, left_arm_motor, right_arm_motor):
+        self.left_arm_motor = left_arm_motor
+        self.right_arm_motor = right_arm_motor
+
+    def punch(self, arm_motor):
+        arm_motor.run_time(100, 500, wait=False)
+        wait(500)
+        arm_motor.run_target(100, 0, wait=False)
+
+    def defense(self):
+        self.left_arm_motor.run_target(100, 90, wait=False)
+        self.right_arm_motor.run_target(100, 90, wait=False)
+        wait(500)
+        self.left_arm_motor.run_target(100, 0, wait=False)
+        self.right_arm_motor.run_target(100, 0, wait=False)</code></pre>
+
+                        <ul>
+                            <li><strong><code>punch()</code></strong>: Moves the arm motor for a short time to make the robot punch.</li>
+                            <li><strong><code>defense()</code></strong>: Moves both arms into a defensive position (90 degrees) and then returns them to the starting position (0 degrees).</li>
+                        </ul>
+
+                        <h4>Motor Setup</h4>
+                        <pre><code class="language-python">hub = PrimeHub()
+left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+right_motor = Motor(Port.B, Direction.CLOCKWISE)
+left_arm_motor = Motor(Port.C, Direction.CLOCKWISE)
+right_arm_motor = Motor(Port.D, Direction.CLOCKWISE)</code></pre>
+
+                        <ul>
+                            <li><code>Port.A</code>, <code>Port.B</code>, <code>Port.C</code>, and <code>Port.D</code> are where the motors are physically connected on the hub.</li>
+                            <li><strong>Direction</strong> specifies which way the motors will spin (clockwise or counterclockwise).</li>
+                        </ul>
+
+                        <h4>Connecting the Xbox Controller</h4>
+                        <pre><code class="language-python">while True:
+    try:
+        xbox = XboxController()
+        print("Xbox controller connected!")
+        break
+    except Exception as e:
+        print(f"Controller not connected: {e}")
+        wait(1000)</code></pre>
+
+                        <p>The program keeps checking until the Xbox controller is successfully connected.</p>
+
+                        <h4>Controlling the Robot</h4>
+                        <pre><code class="language-python">while True:
+    triggers = xbox.triggers()
+    rt = triggers[1]
+    lt = triggers[0]</code></pre>
+
+                        <ul>
+                            <li><strong>RT (Right Trigger)</strong> controls forward movement.</li>
+                            <li><strong>LT (Left Trigger)</strong> controls backward movement.</li>
+                        </ul>
+
+                        <p>The robot's movement is adjusted based on how much you press the triggers. The <strong>left joystick</strong> is used for steering, allowing the robot to turn left or right.</p>
+
+                        <pre><code class="language-python">joystick = xbox.joystick_left()
+steering_adjustment = joystick[0] * 50
+left_power -= steering_adjustment
+right_power += steering_adjustment</code></pre>
+
+                        <p>This adjusts the power to the motors to make the robot turn.</p>
+
+                        <h4>Using the Controller Buttons for Punching and Defense</h4>
+                        <pre><code class="language-python">if Button.RB in xbox.buttons.pressed():
+    arm.punch(right_arm_motor)
+if Button.LB in xbox.buttons.pressed():
+    arm.punch(left_arm_motor)
+
+if Button.A in xbox.buttons.pressed():
+    arm.defense()</code></pre>
+
+                        <ul>
+                            <li><strong>RB and LB</strong> trigger the punches with the right and left arms.</li>
+                            <li><strong>A</strong> button puts the robot into defense mode.</li>
+                        </ul>
+
+                        <h3>3. Running the Code</h3>
+
+                        <p>After you've installed Pybricks and uploaded the code to your <strong>LEGO® SPIKE™ Prime</strong> hub, here's how to run it:</p>
+
+                        <ol>
+                            <li><strong>Build your robot</strong> with the LEGO parts as described in the code.</li>
+                            <li><strong>Connect your Xbox controller</strong> to the hub via Bluetooth.</li>
+                            <li><strong>Upload the code</strong> from the Pybricks Code Editor to your <strong>LEGO® SPIKE™ Prime</strong> hub.</li>
+                            <li><strong>Run the code</strong>, and your robot will be ready to move, punch, and defend with the controller!</li>
+                        </ol>
+
+                        <h3>4. Troubleshooting Tips</h3>
+
+                        <ul>
+                            <li><strong>Controller not connecting</strong>: Make sure the Xbox controller is turned on and within range of the hub.</li>
+                            <li><strong>Motors not moving</strong>: Double-check your motor connections to ensure they're correctly plugged into the right ports (A, B, C, D).</li>
+                            <li><strong>Adjusting sensitivity</strong>: You can adjust the <code>DEADZONE_THRESHOLD</code> and <code>SPEED_SCALE_FACTOR</code> to make the controls feel more comfortable.</li>
+                        </ul>
+
+                        <h3>Conclusion</h3>
+
+                        <p>By following this guide, you can control your <strong>LEGO® SPIKE™ Prime Boxing Robot</strong> with an Xbox controller! You'll be able to drive it, punch with its arms, and make it defend itself. Pybricks makes it easy to program and control LEGO robots using Python, giving you full creative control. Happy building and coding!</p>
+
+                        <h3>Full Code</h3>
+                        <pre><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port
+
+# TankDrive class for controlling robot movement (tank style)
+class TankDrive:
+    def __init__(self, left_motor, right_motor):
+        self.left_motor = left_motor  # Left motor
+        self.right_motor = right_motor  # Right motor
+
+    # Method to control the movement
+    def drive(self, left_power, right_power):
+        # Check if there's power for both motors
+        if left_power != 0 or right_power != 0:
+            self.left_motor.dc(left_power)
+            self.right_motor.dc(right_power)
+        else:
+            self.left_motor.dc(0)
+            self.right_motor.dc(0)
+
+# Arm class to control robot's arms (punching and defense)
+class Arm:
+    def __init__(self, left_arm_motor, right_arm_motor):
+        self.left_arm_motor = left_arm_motor  # Left arm motor
+        self.right_arm_motor = right_arm_motor  # Right arm motor
+
+    # Method to punch with the arm
+    def punch(self, arm_motor):
+        arm_motor.run_time(100, 500, wait=False)  # Punch action
+        wait(500)  # Wait for a brief moment
+        arm_motor.run_target(100, 0, wait=False)  # Return arm to start position
+
+    # Method for defense pose
+    def defense(self):
+        self.left_arm_motor.run_target(100, 90, wait=False)  # Move left arm to defense position
+        self.right_arm_motor.run_target(100, 90, wait=False)  # Move right arm to defense position
+        wait(500)  # Wait for a brief moment
+        self.left_arm_motor.run_target(100, 0, wait=False)  # Return left arm
+        self.right_arm_motor.run_target(100, 0, wait=False)  # Return right arm
+
+# Set up the PrimeHub and motors
+hub = PrimeHub()
+left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+right_motor = Motor(Port.B, Direction.CLOCKWISE)
+left_arm_motor = Motor(Port.C, Direction.CLOCKWISE)
+right_arm_motor = Motor(Port.D, Direction.CLOCKWISE)
+
+# Create instances of TankDrive and Arm
+tank = TankDrive(left_motor, right_motor)
+arm = Arm(left_arm_motor, right_arm_motor)
+
+# Wait for Xbox controller to connect via Bluetooth
+while True:
+    try:
+        xbox = XboxController()  # Try connecting the Xbox controller
+        print("Xbox controller connected!")
+        break
+    except Exception as e:
+        print(f"Controller not connected: {e}")
+        wait(1000)
+
+# Main loop for robot control
+while True:
+    # Read the triggers (RT and LT)
+    triggers = xbox.triggers()
+    rt = triggers[1]  # Right trigger (forward)
+    lt = triggers[0]  # Left trigger (backward)
+
+    # Calculate movement speed based on triggers
+    left_power = rt * 100 - lt * 100
+    right_power = rt * 100 - lt * 100
+
+    # Use joystick for steering adjustments
+    joystick = xbox.joystick_left()
+    steering_adjustment = joystick[0] * 50  # Adjust steering based on joystick movement
+    left_power -= steering_adjustment
+    right_power += steering_adjustment
+
+    # Move the robot using the calculated power
+    tank.drive(left_power, right_power)
+
+    # Button presses for punching and defense
+    if Button.RB in xbox.buttons.pressed():
+        arm.punch(right_arm_motor)
+    if Button.LB in xbox.buttons.pressed():
+        arm.punch(left_arm_motor)
+
+    if Button.A in xbox.buttons.pressed():
+        arm.defense()</code></pre>
+        <h3>6. Useful Links and References</h3>
+        <ul>
+            <li>
+                <strong>GitHub Repository</strong><br>
+                <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/tree/main" class="cta-button secondary-button" target="_blank">Repository</a>
+            </li>
+            <li>
+                <strong>View File</strong><br>
+                <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/blob/main/Boxing.py" class="cta-button secondary-button" target="_blank">Boxing.py</a>
+            </li>
+            <li>
+                <strong>Pybricks Getting Started:</strong><br>
+                <a href="https://pybricks.com/get-started/" class="cta-button secondary-button" target="_blank">Pybricks Official Guide</a>
+            </li>
+        </ul>
+                    </div>
+
+                    <div id="drivingbase" class="doc-section" style="display: none;">
+                        <div class="file-path">
+                            <span class="folder">Pybricks LEGO Projects</span>
+                            <span class="separator">/</span>
+                            <span class="file">DrivingBaseXboxController.py</span>
+                        </div>
+
+                        <h2>How to Control Your LEGO® SPIKE™ Prime Driving Base with an Xbox Controller</h2>
+                        
+                        <p>This guide shows you how to control your LEGO® SPIKE™ Prime Driving Base using Pybricks and an Xbox controller. Whether you're a beginner or a tech enthusiast who digs the classic feel of building with LEGO, this tutorial will walk you through setting up your project, understanding the code, and getting your robot driving (and even moving its arm) with smooth, tank drive control.</p>
+
+                        <hr>
+
+                        <h3>1. Install Pybricks on Your LEGO® SPIKE™ Prime Hub</h3>
+                        
+                        <p>Before you can run the code, you must install Pybricks firmware on your LEGO® SPIKE™ Prime hub. Pybricks is a Python-based library that turns your hub into a programmable machine. Follow these steps:</p>
+
+                        <ol>
+                            <li>
+                                <strong>Visit the Pybricks Getting Started Page:</strong>
+                                <ul>
+                                    <li>Check out the <a href="https://pybricks.com/get-started/">Pybricks installation guide</a> for detailed instructions.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Download and Install Pybricks:</strong>
+                                <ul>
+                                    <li>Connect your hub to your computer using a USB cable.</li>
+                                    <li>Follow the step-by-step instructions to flash the Pybricks firmware onto your LEGO hub.</li>
+                                    <li>This firmware upgrade works for LEGO SPIKE Prime and other compatible hubs.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Install the Pybricks Code Editor:</strong>
+                                <ul>
+                                    <li>Download and install the Pybricks Code Editor from the Pybricks website.</li>
+                                    <li>This editor makes it super easy to write, edit, and upload your Python scripts.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pair Your Xbox Controller:</strong>
+                                <ul>
+                                    <li>After installing Pybricks, pair your Xbox controller with the hub via Bluetooth.</li>
+                                    <li>Ensure your controller is turned on and within range.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>2. Building Instructions for the LEGO® SPIKE™ Prime Driving Base</h3>
+
+                        <p>To build the Driving Base, follow the official LEGO Education instructions:</p>
+
+                        <ul>
+                            <li>
+                                <strong>Driving Base Build:</strong>
+                                <ul>
+                                    <li>Build the base using the LEGO Education SPIKE Prime set.</li>
+                                    <li>Your build should have two drive motors:
+                                        <ul>
+                                            <li><strong>Left Drive Motor:</strong> Connect to <strong>Port C</strong> (configured to spin clockwise).</li>
+                                            <li><strong>Right Drive Motor:</strong> Connect to <strong>Port D</strong> (configured to spin counter-clockwise).</li>
+                                        </ul>
+                                    </li>
+                                    <li>Find the detailed build guide on the official LEGO Education website <a href="https://spike.legoeducation.com/prime/models/bltc58e302d70cf6530">here</a>.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Optional Arm Attachment:</strong>
+                                <ul>
+                                    <li>If you want to add the Driving Base Arm, follow the build instructions provided by LEGO.</li>
+                                    <li>Connect the arm motor to <strong>Port E</strong> (spin clockwise).</li>
+                                    <li>Check out the official instructions for the arm <a href="https://spike.legoeducation.com/prime/models/blte7efff9c7c96c9cb">here</a>.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3>3. Understanding the Code</h3>
+
+                        <p>This Python script lets you drive your LEGO® SPIKE™ Prime Driving Base using tank drive controls and handle the optional arm attachment with the A button on an Xbox controller. Let's break it down:</p>
+
+                        <h4>Imports and Setup</h4>
+                        <pre><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port</code></pre>
+
+                        <ul>
+                            <li><strong>PrimeHub:</strong> Initializes the LEGO® SPIKE™ Prime hub.</li>
+                            <li><strong>Motor:</strong> Gives you control over the motors.</li>
+                            <li><strong>wait:</strong> Adds delays between instructions.</li>
+                            <li><strong>XboxController:</strong> Allows connection to and control with an Xbox controller.</li>
+                            <li><strong>Button, Direction, Port:</strong> Help define controller buttons, motor directions, and hardware ports.</li>
+                        </ul>
+
+                        <h4>Creating the TankDrive Class</h4>
+                        <pre class="line-numbers"><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port
+
+class TankDrive:
+    def __init__(self, left_motor, right_motor):
+        self.left_motor = left_motor  # Left motor
+        self.right_motor = right_motor  # Right motor
+
+    def drive(self, left_power, right_power):
+        if left_power != 0 or right_power != 0:
+            self.left_motor.dc(left_power)
+            self.right_motor.dc(right_power)
+        else:
+            self.left_motor.dc(0)
+            self.right_motor.dc(0)</code></pre>
+
+                        <ul>
+                            <li><strong>Tank Drive</strong> means the robot moves by controlling the left and right wheels independently (like a tank).</li>
+                            <li>The <code>drive()</code> function moves the robot. It checks if there's power (speed) set for the motors and sends that power to the motors.</li>
+                        </ul>
+
+                        <h4>Creating the Arm Class</h4>
+                        <pre><code class="language-python">class Arm:
+    def __init__(self, left_arm_motor, right_arm_motor):
+        self.left_arm_motor = left_arm_motor
+        self.right_arm_motor = right_arm_motor
+
+    def punch(self, arm_motor):
+        arm_motor.run_time(100, 500, wait=False)
+        wait(500)
+        arm_motor.run_target(100, 0, wait=False)
+
+    def defense(self):
+        self.left_arm_motor.run_target(100, 90, wait=False)
+        self.right_arm_motor.run_target(100, 90, wait=False)
+        wait(500)
+        self.left_arm_motor.run_target(100, 0, wait=False)
+        self.right_arm_motor.run_target(100, 0, wait=False)</code></pre>
+
+                        <ul>
+                            <li><strong><code>punch()</code></strong>: Moves the arm motor for a short time to make the robot punch.</li>
+                            <li><strong><code>defense()</code></strong>: Moves both arms into a defensive position (90 degrees) and then returns them to the starting position (0 degrees).</li>
+                        </ul>
+
+                        <h4>Motor Setup</h4>
+                        <pre><code class="language-python">hub = PrimeHub()
+left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+right_motor = Motor(Port.B, Direction.CLOCKWISE)
+left_arm_motor = Motor(Port.C, Direction.CLOCKWISE)
+right_arm_motor = Motor(Port.D, Direction.CLOCKWISE)</code></pre>
+
+                        <ul>
+                            <li><code>Port.A</code>, <code>Port.B</code>, <code>Port.C</code>, and <code>Port.D</code> are where the motors are physically connected on the hub.</li>
+                            <li><strong>Direction</strong> specifies which way the motors will spin (clockwise or counterclockwise).</li>
+                        </ul>
+
+                        <h4>Connecting the Xbox Controller</h4>
+                        <pre><code class="language-python">while True:
+    try:
+        xbox = XboxController()
+        print("Xbox controller connected!")
+        break
+    except Exception as e:
+        print(f"Controller not connected: {e}")
+        wait(1000)</code></pre>
+
+                        <p>The program keeps checking until the Xbox controller is successfully connected.</p>
+
+                        <h4>Controlling the Robot</h4>
+                        <pre><code class="language-python">while True:
+    triggers = xbox.triggers()
+    rt = triggers[1]
+    lt = triggers[0]</code></pre>
+
+                        <ul>
+                            <li><strong>RT (Right Trigger)</strong> controls forward movement.</li>
+                            <li><strong>LT (Left Trigger)</strong> controls backward movement.</li>
+                        </ul>
+
+                        <p>The robot's movement is adjusted based on how much you press the triggers. The <strong>left joystick</strong> is used for steering, allowing the robot to turn left or right.</p>
+
+                        <pre><code class="language-python">joystick = xbox.joystick_left()
+steering_adjustment = joystick[0] * 50
+left_power -= steering_adjustment
+right_power += steering_adjustment</code></pre>
+
+                        <p>This adjusts the power to the motors to make the robot turn.</p>
+
+                        <h4>Using the Controller Buttons for Punching and Defense</h4>
+                        <pre><code class="language-python">if Button.RB in xbox.buttons.pressed():
+    arm.punch(right_arm_motor)
+if Button.LB in xbox.buttons.pressed():
+    arm.punch(left_arm_motor)
+
+if Button.A in xbox.buttons.pressed():
+    arm.defense()</code></pre>
+    <ul>
+        <li><strong>RB and LB</strong> trigger the punches with the right and left arms.</li>
+        <li><strong>A</strong> button puts the robot into defense mode.</li>
+    </ul>
+
+
+                        <h3>Full Code</h3>
+                        <pre class="line-numbers"><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port
+
+# TankDrive class to control the driving motors using a tank drive method.
+class TankDrive:
+    def __init__(self, left_motor, right_motor):
+        self.left_motor = left_motor
+        self.right_motor = right_motor
+
+    def drive(self, left_power, right_power):
+        # Set motor powers to control the robot's movement
+        self.left_motor.dc(left_power)
+        self.right_motor.dc(right_power)
+
+# Arm class to control the optional arm attachment.
+class Arm:
+    def __init__(self, arm_motor):
+        self.arm_motor = arm_motor
+
+    def move_arm(self, down):
+        # Move the arm up or down based on the 'down' parameter.
+        if down:
+            self.arm_motor.run_target(300, -90, wait=False)  # Move arm down
+        else:
+            self.arm_motor.run_target(300, 0, wait=False)    # Move arm up
+
+# Initialize the hub and motors.
+hub = PrimeHub()
+left_motor = Motor(Port.C, Direction.CLOCKWISE)
+right_motor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+arm_motor = Motor(Port.E, Direction.CLOCKWISE)
+
+# Create instances for tank drive and arm control.
+tank_drive = TankDrive(left_motor, right_motor)
+arm = Arm(arm_motor)
+
+# Wait until the Xbox controller is successfully connected via Bluetooth.
+print("Waiting for Xbox controller to connect...")
+while True:
+    try:
+        xbox = XboxController()
+        print("Xbox controller connected!")
+        break
+    except Exception as e:
+        print(f"Controller not connected: {e}")
+        wait(1000)
+
+# Define the deadzone threshold for joystick inputs to prevent unintended movement.
+DEADZONE_THRESHOLD = 80  # Adjust this value as needed
+
+# Define a speed scaling factor to reduce overall motor power for smoother control.
+SPEED_SCALE_FACTOR = 0.8  # Adjust between 0.0 and 1.0
+
+while True:
+    # Read the triggers for forward and backward movement.
+    triggers = xbox.triggers()
+    rt = triggers[0]  # RT accelerates forward
+    lt = triggers[1]  # LT accelerates backward
+
+    # Calculate motor powers based on triggers.
+    left_power = rt - lt
+    right_power = rt - lt
+
+    # Read the left joystick for steering.
+    joystick = xbox.joystick_left()
+    horizontal = joystick[0]  # Horizontal axis for steering
+    vertical = joystick[1]    # Vertical axis (unused directly)
+
+    # Apply deadzone to ignore minor accidental joystick movements.
+    if abs(horizontal) < DEADZONE_THRESHOLD:
+        horizontal = 0
+    if abs(vertical) < DEADZONE_THRESHOLD:
+        vertical = 0
+
+    # Adjust steering based on horizontal movement.
+    steering_adjustment = horizontal * 0.8  # Scale turn rate for smoother steering
+
+    # Apply steering adjustments to motor powers.
+    left_power -= steering_adjustment
+    right_power += steering_adjustment
+
+    # Scale down motor power for controlled movement.
+    left_power *= SPEED_SCALE_FACTOR
+    right_power *= SPEED_SCALE_FACTOR
+
+    # Command the robot to drive using the calculated power values.
+    tank_drive.drive(left_power, right_power)
+
+    # Control arm movement: press Button A to move arm down, release to move arm up.
+    if Button.A in xbox.buttons.pressed():
+        arm.move_arm(down=True)
+    else:
+        arm.move_arm(down=False)
+
+    wait(50)</code></pre>
+    <h3>6. Useful Links and References</h3>
+    <ul>
+        <li>
+            <strong>LEGO Education SPIKE Prime Driving Base Build:</strong><br>
+            <a href="https://spike.legoeducation.com/prime/models/bltc58e302d70cf6530" class="cta-button secondary-button" target="_blank">Driving Base Instructions</a>
+        </li>
+        <li>
+            <strong>LEGO Education SPIKE Prime Driving Base Arm Attachment:</strong><br>
+            <a href="https://spike.legoeducation.com/prime/models/blte7efff9c7c96c9cb" class="cta-button secondary-button" target="_blank">Arm Attachment Build</a>
+        </li>
+        <li>
+            <strong>Pybricks Getting Started:</strong><br>
+            <a href="https://pybricks.com/get-started/" class="cta-button secondary-button" target="_blank">Pybricks Official Guide</a>
+        </li>
+        <li>
+            <strong>GitHub Repository</strong><br>
+            <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/tree/main" class="cta-button secondary-button" target="_blank">Repository</a>
+        </li>
+        <li>
+            <strong>View File</strong><br>
+            <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/blob/main/DrivingBaseXboxController.py" class="cta-button secondary-button" target="_blank">DrivingBaseXboxController.py</a>
+        </li>
+    </ul>
+                    </div>
+
+                    <div id="remotecar" class="doc-section" style="display: none;">
+                        <div class="file-path">
+                            <span class="folder">Pybricks LEGO Projects</span>
+                            <span class="separator">/</span>
+                            <span class="file">Remote-Car.py</span>
+                        </div>
+
+                        <h2>How to Control Your LEGO® SPIKE™ Prime Remote Car with an Xbox Controller</h2>
+                        
+                        <p>Welcome to this official tutorial on controlling your LEGO® SPIKE™ Prime Remote Car using Pybricks and an Xbox controller. This guide provides step-by-step instructions to configure your setup, explains the source code in detail, and covers the building instructions. Whether you are utilizing Car Mode for precise driving or Arm Mode for additional control functions, this document offers a comprehensive explanation to help you get started.</p>
+
+                        <hr>
+
+                        <h3>1. Install Pybricks on Your LEGO® SPIKE™ Prime Hub</h3>
+                        
+                        <p>Before hitting the road with your remote car, you gotta install the Pybricks firmware on your LEGO® SPIKE™ Prime hub. Pybricks lets you run Python scripts on your hub like a boss. Here's what you need to do:</p>
+
+                        <ol>
+                            <li>
+                                <strong>Visit the Pybricks Getting Started Page:</strong>
+                                <ul>
+                                    <li>Go to the <a href="https://pybricks.com/get-started/">Pybricks installation guide</a> for all the deets.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Download and Install Pybricks:</strong>
+                                <ul>
+                                    <li>Connect your hub to your computer using a USB cable.</li>
+                                    <li>Follow the instructions on the website to flash the Pybricks firmware onto your hub.</li>
+                                    <li>This works for LEGO SPIKE Prime and other compatible hubs.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Install the Pybricks Code Editor:</strong>
+                                <ul>
+                                    <li>Grab the Pybricks Code Editor from the Pybricks website.</li>
+                                    <li>You'll write, edit, and upload your Python code with it.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pair Your Xbox Controller:</strong>
+                                <ul>
+                                    <li>After installing Pybricks, pair your Xbox controller with the hub via Bluetooth.</li>
+                                    <li>Make sure your controller is on and in range, bro.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>2. Building Instructions for the Remote Car</h3>
+
+                        <p>Build your remote car like a classic ride with modern tech flair. Here's what you need:</p>
+
+                        <ul>
+                            <li>
+                                <strong>Chassis Build:</strong>
+                                <ul>
+                                    <li>Create a car-style chassis using your LEGO® SPIKE™ Prime set.</li>
+                                    <li>Mount a <strong>steering motor</strong> on <strong>Port B</strong> to control your wheels' direction.</li>
+                                    <li>Attach a <strong>power motor</strong> on <strong>Port D</strong> that drives your car. A gear system might be used here for extra torque or speed.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Optional Arm Attachment:</strong>
+                                <ul>
+                                    <li>For extra versatility, you can add an arm. Install a motor on <strong>Port E</strong> and it can control functions like lifting or grabbing.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><em>For specific build instructions, check out the LEGO SPIKE Prime resources on the official site.</em></p>
+
+                        <h3>3. Understanding the Code</h3>
+
+                        <p>This script lets you switch between two modes using the Y button on your Xbox controller:</p>
+                        <ul>
+                            <li><strong>Car Mode</strong>: For driving and steering your car.</li>
+                            <li><strong>Arm Mode</strong>: For controlling the optional arm using the left joystick's Y-axis.</li>
+                        </ul>
+
+                        <h4>Imports and Setup</h4>
+                        <pre class="line-numbers"><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port</code></pre>
+
+                        <ul>
+                            <li><strong>PrimeHub:</strong> Initializes the hub.</li>
+                            <li><strong>Motor:</strong> Lets you control the steering, power, and arm motors.</li>
+                            <li><strong>wait:</strong> Pauses the program execution when needed.</li>
+                            <li><strong>XboxController:</strong> Connects and manages the Xbox controller inputs.</li>
+                            <li><strong>Button, Direction, Port:</strong> For handling buttons, setting motor directions, and specifying hub ports.</li>
+                        </ul>
+
+                        <h4>Car Class</h4>
+                        <pre class="line-numbers"><code class="language-python">class Car:
+    def __init__(self, steering_motor, power_motor):
+        self.steering_motor = steering_motor
+        self.power_motor = power_motor
+
+    def steer(self, angle):
+        # Convert joystick value to an actual steering angle
+        max_steering_angle = 90
+        steering_angle = (angle / 100) * max_steering_angle
+        self.steering_motor.run_target(speed=600, target_angle=steering_angle, wait=False)
+
+    def drive_power(self, power):
+        # Scale power for smooth forward/reverse driving
+        scaled_power = power * 10
+        scaled_power = max(-1000, min(1000, scaled_power))
+        self.power_motor.dc(scaled_power)
+
+    def check_load_and_feedback(self, controller, threshold=50):
+        # A placeholder for advanced load checking and providing feedback
+        pass</code></pre>
+
+                        <ul>
+                            <li><strong>steer(angle):</strong> Adjusts the steering motor based on left joystick (X-axis) input.</li>
+                            <li><strong>drive_power(power):</strong> Sets the drive motor's power using the triggers (RT/LT). It scales and limits the power for stable driving.</li>
+                            <li><strong>check_load_and_feedback(...):</strong> A stub for potential future features like motor load checking.</li>
+                        </ul>
+
+                        <h4>Arm Class</h4>
+                        <pre class="line-numbers"><code class="language-python">class Arm:
+    def __init__(self, vertical_motor):
+        self.vertical_motor = vertical_motor
+
+    def control(self, joystick_y):
+        # Adjusts the arm's vertical movement based on the Y-axis of the joystick
+        vertical_speed = 0.4
+        self.vertical_motor.dc(joystick_y * vertical_speed)</code></pre>
+
+                        <ul>
+                            <li><strong>control(joystick_y):</strong> Uses the left joystick's Y-axis for moving the arm.</li>
+                        </ul>
+
+                        <h3>4. Running the Code</h3>
+
+                        <ol>
+                            <li>
+                                <strong>Build Your Robot:</strong>
+                                <ul>
+                                    <li>Assemble the chassis with your dedicated steering motor (Port B) and power motor (Port D).</li>
+                                    <li>Optionally, add the arm motor (Port E) if you need arm control.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Upload the Code:</strong>
+                                <ul>
+                                    <li>Open the Pybricks Code Editor.</li>
+                                    <li>Copy the full code below into the editor.</li>
+                                    <li>Connect your hub and upload the script.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pair the Xbox Controller:</strong>
+                                <ul>
+                                    <li>Ensure your Xbox controller is turned on and within Bluetooth range of your hub.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Run the Code:</strong>
+                                <ul>
+                                    <li>Execute the script. Now you're in control:
+                                        <ul>
+                                            <li>Use the left joystick (X-axis) and triggers (RT/LT) to drive your car in Car Mode.</li>
+                                            <li>Press Y to switch to Arm Mode and use the left joystick (Y-axis) to control the arm.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>5. Full Code</h3>
+                        <pre class="line-numbers"><code class="language-python">from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor
+from pybricks.tools import wait
+from pybricks.iodevices import XboxController
+from pybricks.parameters import Button, Direction, Port
+
+# Car class for controlling steering and driving power.
+class Car:
+    def __init__(self, steering_motor, power_motor):
+        self.steering_motor = steering_motor
+        self.power_motor = power_motor
+
+    def steer(self, angle):
+        # Convert the input angle from the joystick to a steering angle.
+        max_steering_angle = 90
+        steering_angle = (angle / 100) * max_steering_angle
+        self.steering_motor.run_target(speed=600, target_angle=steering_angle, wait=False)
+
+    def drive_power(self, power):
+        # Scale power input from the triggers and limit it to acceptable values.
+        scaled_power = power * 10
+        scaled_power = max(-1000, min(1000, scaled_power))
+        self.power_motor.dc(scaled_power)
+
+    def check_load_and_feedback(self, controller, threshold=50):
+        # Placeholder for future advanced features like load checking.
+        pass
+
+# Arm class to control the optional arm.
+class Arm:
+    def __init__(self, vertical_motor):
+        self.vertical_motor = vertical_motor
+
+    def control(self, joystick_y):
+        # Control arm movement based on joystick Y-axis.
+        vertical_speed = 0.4
+        self.vertical_motor.dc(joystick_y * vertical_speed)
+
+# Initialize the hub and motors for steering, driving, and arm control.
+hub = PrimeHub()
+
+steering_motor = Motor(Port.B, Direction.CLOCKWISE)
+power_motor = Motor(Port.D, Direction.CLOCKWISE)
+vertical_motor = Motor(Port.E, Direction.CLOCKWISE)
+
+# Create instances of Car and Arm.
+car = Car(steering_motor, power_motor)
+arm = Arm(vertical_motor)
+
+# Wait for the Xbox controller to connect via Bluetooth.
+print("Waiting for Xbox controller to connect...")
+while True:
+    try:
+        xbox = XboxController()
+        print("Xbox controller connected!")
+        break
+    except Exception as e:
+        print(f"Controller not connected: {e}")
+        wait(1000)
+
+# Initialize mode: False for Car Mode, True for Arm Mode.
+arm_mode = False
+
+while True:
+    # Use the Y button to toggle between Car Mode and Arm Mode.
+    if Button.Y in xbox.buttons.pressed():
+        arm_mode = not arm_mode
+        mode_name = "Arm Mode" if arm_mode else "Car Mode"
+        print(f"Mode toggled. Current mode: {mode_name}")
+        wait(300)
+    
+    if arm_mode:
+        # Arm Mode: Control the arm using the left joystick's Y-axis.
+        joystick = xbox.joystick_left()
+        arm.control(joystick[1])
+    else:
+        # Car Mode: Control steering using left joystick's X-axis and driving with triggers.
+        joystick = xbox.joystick_left()
+        car.steer(joystick[0])
+        trigger_values = xbox.triggers()
+        drive_power = trigger_values[1] - trigger_values[0]
+        car.drive_power(drive_power)
+        car.check_load_and_feedback(xbox)
+    
+    wait(50)</code></pre>
+
+                        <h3>6. Useful Links and References</h3>
+
+                        <ul>
+                            <li>
+                                <strong>GitHub Repository</strong><br>
+                                <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/tree/main" class="cta-button secondary-button" target="_blank">Repository</a>
+                            </li>
+                            <li>
+                                <strong>View File</strong><br>
+                                <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike/blob/main/Remote-Car.py" class="cta-button secondary-button" target="_blank">Remote-Car.py</a>
+                            </li>
+                            <li>
+                                <strong>Pybricks Getting Started:</strong><br>
+                                <a href="https://pybricks.com/get-started/" class="cta-button secondary-button" target="_blank">Pybricks Official Guide</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="repo" class="doc-section" style="display: none;">
+                        <div class="file-path">
+                            <span class="folder">Pybricks LEGO Projects</span>
+                            <span class="separator">/</span>
+                            <span class="file">Repository Overview</span>
+                        </div>
+
+                        <h2>Pybricks Boxing, Remote-Controlled Car, and Driving Base Projects</h2>
+                        
+                        <p>This repository contains three Python scripts written for LEGO® SPIKE™ Prime robots programmed with Pybricks. These projects demonstrate how to control different LEGO robot builds with an Xbox Controller, including a boxing robot, a remote-controlled car, and the standard Driving Base.</p>
+
+                        <div class="repo-info">
+                            <p><strong>Repository:</strong> <a href="https://github.com/yavuzselimkolbasar/Pybricks-Lego-Spike" class="cta-button secondary-button" target="_blank">github.com/yavuzselimkolbasar/Pybricks-Lego-Spike</a></p>
+                            <p><strong>License:</strong> MIT</p>
+                            <p><strong>Language:</strong> Python (100%)</p>
+                        </div>
+
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>A LEGO SPIKE™ Prime or equivalent hub.</li>
+                            <li>Motors connected to your hub as described in the code for the specific project you are building.</li>
+                            <li>Pybricks firmware installed on your hub. Follow the official installation guide.</li>
+                            <li>An Xbox Controller (compatible with Bluetooth).</li>
+                            <li><strong>For DrivingBaseXboxController.py:</strong> You should have built the standard <strong>Driving Base model</strong>. If you intend to use the arm control feature, you also need the <strong>Driving Base Arm attachment</strong>.</li>
+                            <li><strong>For Remote-Car.py:</strong> You should have built a robot with car-style steering (using one motor for steering wheels and another for driving power, potentially with gears).</li>
+                        </ul>
+
+                        <h3>Files in This Repository</h3>
+                        
+                        <h4>1. Boxing.py</h4>
+                        <p><em>Last updated: Jan 24, 2025</em></p>
+                        <p>This script implements a boxing robot that mimics boxing actions using an Xbox controller. The robot includes <strong>tank drive</strong> movement and arm mechanisms for punching and defending.</p>
+
+                        <h5>Features:</h5>
+                        <ul>
+                            <li><strong>Tank Drive:</strong> The robot moves forward, backward, and turns using the controller's triggers and left joystick.</li>
+                            <li><strong>Punching Mechanism:</strong> RB/LB buttons control left/right arm punches.</li>
+                            <li><strong>Defense Mode:</strong> A button activates defensive position.</li>
+                        </ul>
+
+                        <h4>2. Remote-Car.py</h4>
+                        <p>This script controls a robot built <strong>like a car</strong>, featuring a dedicated steering motor and a separate power motor.</p>
+
+                        <h5>Features:</h5>
+                        <ul>
+                            <li><strong>Car-Style Steering:</strong> Dedicated motor for precise steering control.</li>
+                            <li><strong>Geared Power Drive:</strong> Main drive motor with potential gear enhancement.</li>
+                            <li><strong>Optional Arm Control:</strong> Switchable arm control mode.</li>
+                            <li><strong>Mode Switching:</strong> Toggle between Car Mode and Arm Mode.</li>
+                        </ul>
+
+                        <h4>3. DrivingBaseXboxController.py</h4>
+                        <p><em>Last updated: Apr 5, 2025</em></p>
+                        <p>Controls the standard LEGO Education SPIKE Prime Driving Base with optional arm attachment.</p>
+
+                        <h5>Features:</h5>
+                        <ul>
+                            <li><strong>Tank Drive:</strong> Configured for standard Driving Base.</li>
+                            <li><strong>Arm Control:</strong> Optional arm attachment support.</li>
+                            <li><strong>Control Refinements:</strong> Includes deadzone and speed scaling.</li>
+                        </ul>
+
+                        <h3>Installation and Usage</h3>
+                        <ol>
+                            <li>Build your desired robot (Boxing Robot, Remote Car, or the standard Driving Base).</li>
+                            <li>Install Pybricks firmware on your hub.</li>
+                            <li>Connect motors to the appropriate hub ports.</li>
+                            <li>Copy the corresponding script to the hub using the Pybricks code editor.</li>
+                            <li>Run the script on your hub.</li>
+                            <li>Pair your Xbox controller via Bluetooth and start controlling your robot.</li>
+                        </ol>
+
+                        <h3>Troubleshooting</h3>
+                        <ul>
+                            <li>Ensure proper Xbox controller Bluetooth connection.</li>
+                            <li>Verify motor connections and directions.</li>
+                            <li>Adjust sensitivity settings if controls feel too sensitive or slow.</li>
+                        </ul>
+
+                        <h3>Future Improvements</h3>
+                        <ul>
+                            <li>Add controller feedback (vibrations, LED signals).</li>
+                            <li>Implement autonomous features and sensor integration.</li>
+                            <li>Refine control sensitivity and scaling factors.</li>
+                        </ul>
+
+                        <h3>License</h3>
+                        <p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="copyright-section">
+            <p>&copy; 2025 Yavuz Selim Kolbasar. All rights reserved.</p>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="main.js"></script>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </div>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            // Show button when user scrolls down 500px from the top
+            if (window.scrollY > 500) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

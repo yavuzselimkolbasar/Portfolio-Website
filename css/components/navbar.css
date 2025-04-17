@@ -1,0 +1,334 @@
+
+.main-nav {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 500px;
+    background: #222222;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 35px;
+    padding: 4px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent !important;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 6px 8px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 6px;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+    fill: none;
+}
+
+.nav-links a.active .nav-icon {
+    stroke: var(--primary-color);
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 4px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(15deg);
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        top: auto;
+        bottom: 15px;
+        max-width: 85%;
+        padding: 4px 8px;
+        border-radius: 25px;
+        background: rgba(34, 34, 34, 0.98);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-wrapper {
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 2px;
+    }
+
+    .nav-links a {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        border-radius: 50%;
+    }
+
+    .nav-icon {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-nav {
+        max-width: 90%;
+        padding: 4px 4px;
+    }
+
+    .nav-links a {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+
+    .nav-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .theme-toggle-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+[data-theme="light"] .main-nav {
+    background: #f0f0f0; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-links a {
+    color: #333333; 
+}
+
+[data-theme="light"] .nav-links a:hover {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: var(--primary-color);
+}
+
+[data-theme="light"] .nav-links a.active {
+    background: rgba(0, 0, 0, 0.12) !important;
+    color: var(--primary-color);
+}
+
+[data-theme="light"] .theme-toggle-btn {
+    color: #333333;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .nav-icon {
+    stroke: #333333;
+}
+
+[data-theme="light"] .nav-links a.active .nav-icon {
+    stroke: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+    [data-theme="light"] .main-nav {
+        background: rgba(240, 240, 240, 0.98);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+svg.nav-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.nav-links a.active svg.nav-icon {
+    stroke: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links li svg.nav-icon {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        margin: 0;
+    }
+
+    .nav-links a {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        border-radius: 50%;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .main-nav {
+        max-width: 95%;
+        padding: 4px;
+        border-radius: 20px;
+        bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main-nav {
+        max-width: 98%;
+        padding: 3px;
+        border-radius: 18px;
+        bottom: 8px;
+    }
+
+    .nav-links a {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .theme-toggle-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+
+    main {
+        padding-bottom: 80px;
+    }
+}
+
+pre[class*="language-"] {
+    margin: 0;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 8px;
+    background: var(--section-bg);
+}
+
+.theme-toggle-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="light"] .theme-toggle-icon svg.moon-icon {
+    opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle-icon svg.sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+.theme-toggle-icon svg.moon-icon {
+    opacity: 1;
+}
+
+.theme-toggle-icon svg.sun-icon {
+    opacity: 0;
+}
+
+.theme-toggle-icon svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
