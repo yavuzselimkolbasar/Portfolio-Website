@@ -398,7 +398,41 @@ pre, code, pre[class*="language-"], code[class*="language-"] {
         margin: 0 auto;
         box-sizing: border-box;
     }
+    .folder-header {
+        padding: 0.7rem 0.8rem;
+    }
+    .folder-content {
+        padding: 0.5rem 0.8rem 0.5rem 1.8rem;
+    }
+    .folder-toggle {
+        width: 24px;
+        height: 24px;
+        font-size: 1rem;
+    }
 
+    .folder-name {
+        margin-left: 0.8rem;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .docs-content {
+        padding: 15px;
+    }
+    .folder-header {
+        padding: 0.7rem 0.8rem;
+    }
+    .folder-content {
+        padding: 0.5rem 0.8rem 0.5rem 1.8rem;
+    }
+    .folder-toggle {
+        width: 24px;
+        height: 24px;
+        font-size: 1rem;
+    }
+    .folder-name {
+        margin-left: 0.8rem;
+    }
 }
 pre[class*="language-"] {
     background: #1e1e1e !important;
